@@ -12,12 +12,12 @@ class SecondViewController: UIViewController {
     
     @IBOutlet var email : UITextView!
     @IBOutlet var name : UITextView!
+    var vc1: ViewController!
     
-    var emailValue = ""
-    var nameValue = ""
+    var emailValue = "No name Has been set"
+    var nameValue = "No email has been set"
     @IBAction func buttonFirst(){
         let vc = self.storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
-        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

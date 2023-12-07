@@ -13,35 +13,45 @@ class ViewController: UIViewController {
     @IBOutlet var emailText : UITextField!
     @IBOutlet var nametext : UITextField!
     
+    var vc2 : SecondViewController!
+    var vc3 : ThirdViewController!
+    
+    
+    var nameVal = ""
+    var emailVal = ""
     
     @IBAction func buttonSecond(){
-        let vc = self.storyboard?.instantiateViewController(identifier: "SecondViewController") as! SecondViewController
-       // vc.nameValue = nametext.text ?? ""
-       // vc.emailValue = emailText.text ?? ""
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+       //vc.nameValue = nametext.text ?? ""
+       //vc.emailValue = emailText.text ?? ""
+        self.navigationController?.pushViewController(vc2, animated: true)
     }
     
     @IBAction func buttonThird(){
-        let vc = self.storyboard?.instantiateViewController(identifier: "ThirdViewController") as! ThirdViewController
-       // vc.nameValue = nametext.text ?? ""
+       
+        //vc.nameValue = nametext.text ?? ""
        // vc.emailValue = emailText.text ?? ""
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc3, animated: true)
     }
     
     @IBAction func buttonSubmit(){
-        let vc2 = self.storyboard?.instantiateViewController(identifier: "SecondViewController") as! SecondViewController
-        let vc3 = self.storyboard?.instantiateViewController(identifier: "ThirdViewController") as! ThirdViewController
+        // vc2 = self.storyboard?.instantiateViewController(identifier: "SecondViewController") as! SecondViewController
+        // vc3 = self.storyboard?.instantiateViewController(identifier: "ThirdViewController") as! ThirdViewController
         
-        vc2.nameValue = nametext.text ?? "default"
-        vc2.emailValue = emailText.text ?? "default"
+        vc2.nameValue = nametext.text ?? "default2Name"
+        vc2.emailValue = emailText.text ?? "default2email"
         
-        vc3.nameValue = nametext.text ?? "default"
-        vc3.emailValue = emailText.text ?? "default"
+        vc3.nameValue = nametext.text ?? "default3email"
+        vc3.emailValue = emailText.text ?? "default3name"
+       // self.nameVal = nametext.text ?? ""
+       // self.emailVal = emailText.text ?? ""
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        vc3 = self.storyboard?.instantiateViewController(identifier: "ThirdViewController") as? ThirdViewController
+        vc2 = self.storyboard?.instantiateViewController(identifier: "SecondViewController") as? SecondViewController
     }
 
 

@@ -12,8 +12,8 @@ class ThirdViewController: UIViewController {
     @IBOutlet var email : UITextView!
     @IBOutlet var name : UITextView!
     
-    var emailValue = ""
-    var nameValue = ""
+    var emailValue = "No name Has been set"
+    var nameValue = "No email Has been set"
     
     @IBAction func buttonFirst(){
         let vc = self.storyboard?.instantiateViewController(identifier: "ViewController") as! ViewController
